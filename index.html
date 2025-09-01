@@ -4,24 +4,214 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Thiraphat Ruksujarit — CV</title>
-  <meta name="description" content="Latest CV of Thiraphat Ruksujarit (Dan). Quant & CS." />
+  <meta name="description" content="Profile and CV of Thiraphat Ruksujarit (Dan). Quant & CS." />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    body {font-family: system-ui, sans-serif; margin: 0; padding: 2rem; line-height: 1.6; background: #fafafa;}
-    .wrap {max-width: 900px; margin: 0 auto;}
-    h1 {margin-bottom: .2rem;}
-    .btn {display:inline-block; padding:.75rem 1rem; margin:.5rem 0; border:1px solid #333;
-          border-radius:.5rem; text-decoration:none; color:#333; background:#fff;}
-    iframe {width:100%; height:85vh; border:1px solid #ddd; border-radius:.5rem; margin-top:1rem;}
-    .muted {color:#555; font-size:.95rem;}
+    :root {
+      --bg: #0d0d0d;       /* near black */
+      --surface: #1a1a1a;  /* dark grey */
+      --text: #eaeaea;     /* light text */
+      --muted: #9e9e9e;    /* muted text */
+      --border: #2e2e2e;   /* subtle border */
+      --accent: #22c55e;   /* emerald green */
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 16px;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1000px;
+      display: grid;
+      gap: 24px;
+    }
+
+    /* Profile Card */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    h1 { margin: 0; font-size: 2rem; }
+    .sub { color: var(--muted); margin: 4px 0; font-size: .95rem; }
+
+    /* Social icons */
+    .socials {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .socials a {
+      font-size: 1.5rem;
+      color: var(--text);
+      transition: color .2s ease;
+    }
+    .socials a:hover { color: var(--accent); }
+
+    /* CV Panel */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      height: 85vh; /* taller by default */
+    }
+    .panel h2 { margin: 0 0 12px; font-size: 1.2rem; }
+    .btn {
+      align-self: flex-start;
+      padding: .65rem .9rem;
+      border: 1px solid var(--accent);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      transition: background .2s ease;
+      margin-bottom: 12px;
+    }
+    .btn:hover { background: var(--accent); color: #000; }
+
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #0b0d0d;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 600px) {
+        .avatar { width: 96px; height: 96px; }
+        .panel { height: 70vh; }
+        /* .highlight-item { justify-content: center; } */
+    }
+    .highlights {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* keeps content centered overall */
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: center;    /* keeps text centered within its block */
+}
+
+.highlight-item img.logo {
+  height: 40px;          
+  width: auto;
+  flex-shrink: 0;
+  filter: grayscale(0%) brightness(100%); /* optional: keep them clean/monochrome */
+}
+
+.highlight-item p {
+  font-size: 1rem;
+}
+
+.org-link {
+
+  text-decoration: none;
+  /* color: inherit;  */
+color: #f5f5f5; /* near white */
+  text-shadow: 0 0 6px rgba(34, 197, 94, 0.5); /* brighter emerald glow */
+  transition: color .2s ease, text-shadow .2s ease;
+
+}
+
+.org-link:hover {
+  color: var(--accent); /* turn green on hover */
+}
+
+.org-link:hover .logo {
+  filter: grayscale(0%) brightness(150%) drop-shadow(0 0 4px var(--accent));
+}
+
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>Thiraphat Ruksujarit — CV</h1>
-    <p class="muted">This page always hosts the latest version. Save or share the link.</p>
-    <p><a class="btn" href="./cv.pdf" target="_blank" rel="noopener">Download PDF</a></p>
-    <iframe src="./cv.pdf"></iframe>
-    <p class="muted">If the preview doesn’t load, use the download button above.</p>
-  </div>
+  <main>
+    <!-- Profile -->
+    <section class="card">
+      <img src="avatar.jpg" alt="Profile photo of Thiraphat Ruksujarit" class="avatar" />
+      <h1>Thiraphat (Dan) Ruksujarit</h1>
+        <div class="highlights"">
+        <div class="highlight-item">
+            <p>Part-Time <strong>Research Consultant</strong> at 
+                    <a href="https://www.worldquantbrain.com/" target="_blank" class="org-link">
+                    <strong>WorldQuant BRAIN</strong></p>
+            <img src="worldquant_logo.jpeg" alt="WorldQuant logo" class="logo" /></a>
+        </div>
+        <div class="highlight-item">
+            <p>MSc <strong>Quantitative Finance</strong> student at     
+                <a href="https://www.bayes.city.ac.uk/study/masters/quantitative-finance" target="_blank" class="org-link">
+                <strong>Bayes Business School</strong></p>
+            <img src="bayes_logo.jpg" alt="Bayes logo" class="logo" /></a>
+        </div>
+        <div class="highlight-item">
+            <p>BSc <strong>Computer Science</strong> Graduate at     
+            <a href="https://eps.leeds.ac.uk/computing" target="_blank" class="org-link">
+            <strong>University of Leeds</strong></p>
+            <img src="uni_leed_logo.jpeg" alt="University of Leeds logo" class="logo" /></a>
+        </div>
+        </div>  
+
+
+      <!-- Social icons -->
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/thiraphat-ruksujarit/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/DanRRR" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:dtruk001@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section class="panel">
+      <h2>Curriculum Vitae</h2>
+      <a class="btn" href="./cv.pdf" target="_blank" rel="noopener">View / Download PDF</a>
+      <iframe src="./cv.pdf" title="Embedded CV"></iframe>
+      <p class="muted">If the preview does not work, use the button above.</p>
+    </section>
+  </main>
 </body>
 </html>
+
+
